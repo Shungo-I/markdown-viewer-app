@@ -1,5 +1,5 @@
-import styles from "./Button.module.css";
 import clsx from "clsx";
+import styles from "./Button.module.css";
 
 export interface ButtonProps {
 	/** Is this the principal call to action on the page? */
