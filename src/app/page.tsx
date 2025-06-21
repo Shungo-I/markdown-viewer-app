@@ -1,3 +1,4 @@
+import { Button } from "@mantine/core";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -44,6 +45,13 @@ export default function Home() {
 					>
 						Read our docs
 					</a>
+				</div>
+
+				{/* Mantineボタンの例 */}
+				<div style={{ marginTop: "2rem", textAlign: "center" }}>
+					<Button variant="filled" color="blue">
+						Mantine Button
+					</Button>
 				</div>
 			</main>
 			<footer className={styles.footer}>
