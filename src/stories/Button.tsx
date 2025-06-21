@@ -24,10 +24,10 @@ export const Button = ({
 }: ButtonProps) => {
 	// Mantineのサイズにマッピング
 	const mantineSize = size === "small" ? "xs" : size === "large" ? "lg" : "md";
-	
+
 	// プライマリかどうかでvariantを決定
 	const variant = primary ? "filled" : "outline";
-	
+
 	return (
 		<MantineButton
 			variant={variant}

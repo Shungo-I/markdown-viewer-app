@@ -1,5 +1,5 @@
-import type { Preview } from "@storybook/nextjs-vite";
 import { MantineProvider } from "@mantine/core";
+import type { Preview } from "@storybook/nextjs-vite";
 import "@mantine/core/styles.css";
 import React from "react";
 
@@ -19,7 +19,7 @@ const preview: Preview = {
 			test: "todo",
 		},
 	},
-	
+
 	decorators: [
 		(Story) => (
 			<MantineProvider>

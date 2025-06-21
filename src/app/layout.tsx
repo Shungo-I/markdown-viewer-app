@@ -1,6 +1,6 @@
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "./globals.css";
 
@@ -30,9 +30,7 @@ export default function RootLayout({
 				<ColorSchemeScript />
 			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
-				<MantineProvider>
-					{children}
-				</MantineProvider>
+				<MantineProvider>{children}</MantineProvider>
 			</body>
 		</html>
 	);
