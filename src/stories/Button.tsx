@@ -1,4 +1,5 @@
-import { Button as MantineButton } from "@mantine/core";
+import styles from "./Button.module.css";
+import clsx from "clsx";
 
 export interface ButtonProps {
 	/** Is this the principal call to action on the page? */
@@ -22,22 +23,22 @@ export const Button = ({
 	onClick,
 	...props
 }: ButtonProps) => {
-	// Mantineのサイズにマッピング
-	const mantineSize = size === "small" ? "xs" : size === "large" ? "lg" : "md";
-
-	// プライマリかどうかでvariantを決定
-	const variant = primary ? "filled" : "outline";
+	// CSS moduleのクラス名を組み合わせる
+	const buttonClasses = clsx(
+		styles.button,
+		styles[size],
+		primary ? styles.primary : styles.secondary,
+	);
 
 	return (
-		<MantineButton
-			variant={variant}
-			size={mantineSize}
-			color={primary ? "blue" : "gray"}
+		<button
+			type="button"
+			className={buttonClasses}
 			onClick={onClick}
 			style={backgroundColor ? { backgroundColor } : undefined}
 			{...props}
 		>
 			{label}
-		</MantineButton>
+		</button>
 	);
 };
