@@ -1,0 +1,341 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="デザインシステム/タイポグラフィ" />
+
+# タイポグラフィ
+
+デジタル庁デザインシステムに基づいたタイポグラフィーシステムです。
+
+## フォントファミリー
+
+### Base Font
+- **Noto Sans JP**: 日本語と英語の基本フォント
+- **フォールバック**: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif
+
+### Monospace Font
+- **Noto Sans Mono**: コード表示用のモノスペースフォント
+- **フォールバック**: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace
+
+## 見出しスタイル
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <h1 style={{ font: 'var(--font-heading-xl)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        見出し XL - 36px Bold
+      </h1>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-heading-xl
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <h2 style={{ font: 'var(--font-heading-lg)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        見出し L - 30px Bold
+      </h2>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-heading-lg
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <h3 style={{ font: 'var(--font-heading-md)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        見出し M - 24px Bold
+      </h3>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-heading-md
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <h4 style={{ font: 'var(--font-heading-sm)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        見出し S - 20px Bold
+      </h4>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-heading-sm
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <h5 style={{ font: 'var(--font-heading-xs)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        見出し XS - 18px SemiBold
+      </h5>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-heading-xs
+      </code>
+    </div>
+  </div>
+</div>
+
+## 本文スタイル
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-lg)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 L - 18px Regular - ここは本文の大きいサイズです。読みやすさを重視したサイズで、重要な情報を表示するのに適しています。
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-lg
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-md)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 M - 16px Regular - 標準的な本文サイズです。一般的な文章に使用します。
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-md
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-sm)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 S - 14px Regular - 小さいサイズの本文です。補足情報などに使用します。
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-sm
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-xs)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 XS - 12px Regular - 最小サイズの本文です。
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-xs
+      </code>
+    </div>
+  </div>
+</div>
+
+## 強調スタイル
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-lg-bold)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 L Bold - 18px Bold - 強調された大きいテキスト
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-lg-bold
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-md-bold)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 M Bold - 16px Bold - 標準的な強調テキスト
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-md-bold
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-sm-bold)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 S Bold - 14px Bold - 小さい強調テキスト
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-sm-bold
+      </code>
+    </div>
+  </div>
+</div>
+
+## セミボールドスタイル
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-lg-semibold)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 L SemiBold - 18px Medium - 適度な強調の大きいテキスト
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-lg-semibold
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-md-semibold)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 M SemiBold - 16px Medium - 標準的な適度な強調テキスト
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-md-semibold
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-body-sm-semibold)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        本文 S SemiBold - 14px Medium - 小さい適度な強調テキスト
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-body-sm-semibold
+      </code>
+    </div>
+  </div>
+</div>
+
+## キャプション・ラベル
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-caption)', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>
+        キャプション - 12px Regular - 画像の説明文など
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-caption
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-caption-bold)', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>
+        キャプション Bold - 12px Bold - 強調されたキャプション
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-caption-bold
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-label)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        ラベル - 14px Medium - フォームラベルなど
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-label
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <p style={{ font: 'var(--font-label-sm)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+        ラベル S - 12px Medium - 小さいラベル
+      </p>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-label-sm
+      </code>
+    </div>
+  </div>
+</div>
+
+## コードスタイル
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px', backgroundColor: 'var(--color-background-secondary)' }}>
+      <code style={{ font: 'var(--font-code-lg)', color: 'var(--color-text-primary)', margin: '0 0 8px 0', display: 'block' }}>
+        const example = "コード L - 18px Regular";
+      </code>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-code-lg
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px', backgroundColor: 'var(--color-background-secondary)' }}>
+      <code style={{ font: 'var(--font-code-md)', color: 'var(--color-text-primary)', margin: '0 0 8px 0', display: 'block' }}>
+        const example = "コード M - 16px Regular";
+      </code>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-code-md
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px', backgroundColor: 'var(--color-background-secondary)' }}>
+      <code style={{ font: 'var(--font-code-sm)', color: 'var(--color-text-primary)', margin: '0 0 8px 0', display: 'block' }}>
+        const example = "コード S - 14px Regular";
+      </code>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-code-sm
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px', backgroundColor: 'var(--color-background-secondary)' }}>
+      <code style={{ font: 'var(--font-code-xs)', color: 'var(--color-text-primary)', margin: '0 0 8px 0', display: 'block' }}>
+        const example = "コード XS - 12px Regular";
+      </code>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-code-xs
+      </code>
+    </div>
+  </div>
+</div>
+
+## インライン要素
+
+<div style={{ marginBottom: '32px' }}>
+  <div style={{ display: 'grid', gap: '16px' }}>
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <a href="#" style={{ font: 'var(--font-link)', color: 'var(--color-link-default)', textDecoration: 'underline', margin: '0 0 8px 0', display: 'block' }}>
+        リンクテキスト - 16px Regular
+      </a>
+      <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+        --font-link
+      </code>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <button style={{ font: 'var(--font-button)', color: 'var(--color-text-inverse)', backgroundColor: 'var(--color-primary-600)', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>
+        ボタンテキスト - 16px Medium
+      </button>
+      <div style={{ marginTop: '8px' }}>
+        <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+          --font-button
+        </code>
+      </div>
+    </div>
+    
+    <div style={{ padding: '16px', border: '1px solid var(--color-border-primary)', borderRadius: '8px' }}>
+      <input 
+        type="text" 
+        placeholder="入力フィールド - 16px Regular" 
+        style={{ 
+          font: 'var(--font-input)', 
+          color: 'var(--color-text-primary)', 
+          border: '1px solid var(--color-border-primary)', 
+          padding: '8px 12px', 
+          borderRadius: '4px',
+          width: '100%',
+          boxSizing: 'border-box'
+        }}
+      />
+      <div style={{ marginTop: '8px' }}>
+        <code style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+          --font-input
+        </code>
+      </div>
+    </div>
+  </div>
+</div>
+
+## 使用方法
+
+CSSカスタムプロパティとして定義されているため、以下のように使用できます：
+
+```css
+/* 見出しスタイルの適用 */
+.heading-large {
+  font: var(--font-heading-xl);
+  color: var(--color-text-primary);
+}
+
+/* 本文スタイルの適用 */
+.body-text {
+  font: var(--font-body-md);
+  color: var(--color-text-primary);
+}
+
+/* コードスタイルの適用 */
+.code-block {
+  font: var(--font-code-md);
+  background-color: var(--color-background-secondary);
+  padding: 16px;
+  border-radius: 8px;
+}
+```
+
+## 特徴
+
+- **一貫性**: すべてのフォントサイズと行間が体系的に定義されています
+- **レスポンシブ**: 異なるデバイスで適切に表示されます
+- **アクセシビリティ**: 十分なコントラストと読みやすさを確保
+- **拡張性**: 新しいスタイルを追加しやすい設計
+- **デジタル庁準拠**: デジタル庁デザインシステムの原則に従っています
