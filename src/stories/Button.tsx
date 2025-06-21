@@ -1,4 +1,4 @@
-import "./button.css";
+import { Button as MantineButton } from "@mantine/core";
 
 export interface ButtonProps {
 	/** Is this the principal call to action on the page? */
@@ -19,25 +19,25 @@ export const Button = ({
 	size = "medium",
 	backgroundColor,
 	label,
+	onClick,
 	...props
 }: ButtonProps) => {
-	const mode = primary
-		? "storybook-button--primary"
-		: "storybook-button--secondary";
+	// Mantineのサイズにマッピング
+	const mantineSize = size === "small" ? "xs" : size === "large" ? "lg" : "md";
+	
+	// プライマリかどうかでvariantを決定
+	const variant = primary ? "filled" : "outline";
+	
 	return (
-		<button
-			type="button"
-			className={["storybook-button", `storybook-button--${size}`, mode].join(
-				" ",
-			)}
+		<MantineButton
+			variant={variant}
+			size={mantineSize}
+			color={primary ? "blue" : "gray"}
+			onClick={onClick}
+			style={backgroundColor ? { backgroundColor } : undefined}
 			{...props}
 		>
 			{label}
-			<style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
-		</button>
+		</MantineButton>
 	);
 };
