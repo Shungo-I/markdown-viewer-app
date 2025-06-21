@@ -2,7 +2,6 @@ import { MantineProvider } from "@mantine/core";
 import type { Preview } from "@storybook/nextjs-vite";
 import "@mantine/core/styles.css";
 import "../src/app/globals.css";
-import React from "react";
 
 const preview: Preview = {
 	parameters: {
