@@ -1,42 +1,43 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { MarkdownViewer } from './index';
-import { sampleMarkdown } from './sample';
+import type { Meta, StoryObj } from "@storybook/react";
+import { MarkdownViewer } from "./index";
+import { sampleMarkdown } from "./sample";
 
 const meta: Meta<typeof MarkdownViewer> = {
-  title: 'Components/MarkdownViewer',
-  component: MarkdownViewer,
-  parameters: {
-    layout: 'padded',
-    docs: {
-      description: {
-        component: 'react-markdownを使用してMarkdownコンテンツを表示するコンポーネントです。',
-      },
-    },
-  },
-  argTypes: {
-    content: {
-      description: '表示するMarkdownコンテンツ',
-      control: 'text',
-    },
-    className: {
-      description: '追加のCSSクラス名',
-      control: 'text',
-    },
-  },
+	title: "Components/MarkdownViewer",
+	component: MarkdownViewer,
+	parameters: {
+		layout: "padded",
+		docs: {
+			description: {
+				component:
+					"react-markdownを使用してMarkdownコンテンツを表示するコンポーネントです。",
+			},
+		},
+	},
+	argTypes: {
+		content: {
+			description: "表示するMarkdownコンテンツ",
+			control: "text",
+		},
+		className: {
+			description: "追加のCSSクラス名",
+			control: "text",
+		},
+	},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    content: sampleMarkdown,
-  },
+	args: {
+		content: sampleMarkdown,
+	},
 };
 
 export const SimpleMarkdown: Story = {
-  args: {
-    content: `# シンプルなタイトル
+	args: {
+		content: `# シンプルなタイトル
 
 これは **シンプルな** Markdownの例です。
 
@@ -44,12 +45,12 @@ export const SimpleMarkdown: Story = {
 - リスト項目2
 
 \`inline code\` も表示できます。`,
-  },
+	},
 };
 
 export const CodeBlock: Story = {
-  args: {
-    content: `# コードブロックの例
+	args: {
+		content: `# コードブロックの例
 
 以下はJavaScriptのコード例です：
 
@@ -63,12 +64,12 @@ console.log(fibonacci(10)); // 55
 \`\`\`
 
 インライン\`code\`も表示されます。`,
-  },
+	},
 };
 
 export const Table: Story = {
-  args: {
-    content: `# テーブルの例
+	args: {
+		content: `# テーブルの例
 
 | 項目 | 価格 | 在庫 |
 |------|------|------|
@@ -77,12 +78,12 @@ export const Table: Story = {
 | バナナ | 120円 | 20個 |
 
 テーブルの表示例です。`,
-  },
+	},
 };
 
 export const Blockquote: Story = {
-  args: {
-    content: `# 引用の例
+	args: {
+		content: `# 引用の例
 
 > これは重要な引用文です。
 > 複数行にわたって記述することもできます。
@@ -90,11 +91,11 @@ export const Blockquote: Story = {
 通常のテキストに戻ります。
 
 > 別の引用文もあります。`,
-  },
+	},
 };
 
 export const EmptyContent: Story = {
-  args: {
-    content: '',
-  },
+	args: {
+		content: "",
+	},
 };

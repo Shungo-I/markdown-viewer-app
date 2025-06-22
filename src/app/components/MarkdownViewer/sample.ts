@@ -43,4 +43,4 @@ console.log(greeting);
 
 ---
 
-以上がMarkdownViewerのサンプルです。`; 
+以上がMarkdownViewerのサンプルです。`;
