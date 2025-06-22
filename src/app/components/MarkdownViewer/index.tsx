@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styles from './index.module.css';
 
 type MarkdownViewerProps = {
@@ -41,16 +43,26 @@ export const MarkdownViewer: FC<MarkdownViewerProps> = ({
           blockquote: ({ children }) => (
             <blockquote className={styles['markdownViewer-blockquote']}>{children}</blockquote>
           ),
-          code: ({ children, className }) => {
-            const isInlineCode = !className;
+          code: ({ children, className, ...props }) => {
+            const match = /language-(\w+)/.exec(className || '');
+            const language = match ? match[1] : '';
+            const isInlineCode = !match;
+            
             return isInlineCode ? (
-              <code className={styles['markdownViewer-inlineCode']}>{children}</code>
+              <code className={styles['markdownViewer-inlineCode']} {...props}>
+                {children}
+              </code>
             ) : (
-              <code className={styles['markdownViewer-codeBlock']}>{children}</code>
+              <SyntaxHighlighter
+                language={language}
+                style={tomorrow}
+              >
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
             );
           },
           pre: ({ children }) => (
-            <pre className={styles['markdownViewer-pre']}>{children}</pre>
+            <div className={styles['markdownViewer-pre']}>{children}</div>
           ),
           table: ({ children }) => (
             <table className={styles['markdownViewer-table']}>{children}</table>
