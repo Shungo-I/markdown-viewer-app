@@ -1,0 +1,165 @@
+.markdownViewer {
+	max-width: 100%;
+	padding: 20px;
+	line-height: 1.6;
+	color: var(--color-text-primary);
+	font-family: var(--font-family-base);
+}
+
+.markdownViewer-heading1 {
+	font: var(--font-heading-xl);
+	margin-bottom: 1rem;
+	margin-top: 0;
+	color: var(--color-text-primary);
+	border-bottom: 2px solid var(--color-border-primary);
+	padding-bottom: 0.5rem;
+}
+
+.markdownViewer-heading2 {
+	font: var(--font-heading-lg);
+	margin-bottom: 0.8rem;
+	margin-top: 2rem;
+	color: var(--color-text-primary);
+	border-bottom: 1px solid var(--color-border-primary);
+	padding-bottom: 0.3rem;
+}
+
+.markdownViewer-heading3 {
+	font: var(--font-heading-md);
+	margin-bottom: 0.6rem;
+	margin-top: 1.5rem;
+	color: var(--color-text-primary);
+}
+
+.markdownViewer-paragraph {
+	font: var(--font-body-md);
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+.markdownViewer-unorderedList,
+.markdownViewer-orderedList {
+	font: var(--font-body-md);
+	margin-bottom: 1rem;
+	padding-left: 2rem;
+}
+
+.markdownViewer-listItem {
+	margin-bottom: 0.3rem;
+}
+
+.markdownViewer-blockquote {
+	margin: 1rem 0;
+	padding: 0 1rem;
+	color: var(--color-text-secondary);
+	border-left: 4px solid var(--color-border-secondary);
+	background: var(--color-background-secondary);
+	border-radius: 4px;
+	font: var(--font-body-md);
+}
+
+.markdownViewer-inlineCode {
+	background: var(--color-background-secondary);
+	border-radius: 3px;
+	padding: 2px 4px;
+	font: var(--font-code-sm);
+	color: var(--color-accent-orange-light);
+}
+
+.markdownViewer-pre {
+	background: var(--color-background-secondary);
+	border-radius: 6px;
+	padding: 16px;
+	overflow-x: auto;
+	margin: 1rem 0;
+	border: 1px solid var(--color-border-primary);
+}
+
+.markdownViewer-codeBlock {
+	font: var(--font-code-md);
+	color: var(--color-text-primary);
+}
+
+.markdownViewer-table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1rem 0;
+	border: 1px solid var(--color-border-secondary);
+	border-radius: 6px;
+	overflow: hidden;
+	font: var(--font-body-md);
+}
+
+.markdownViewer-tableHead {
+	background: var(--color-background-secondary);
+}
+
+.markdownViewer-tableBody {
+	/* デフォルトのtbodyスタイル */
+}
+
+.markdownViewer-tableHeaderCell {
+	padding: 12px;
+	border-bottom: 1px solid var(--color-border-secondary);
+	border-right: 1px solid var(--color-border-secondary);
+	font: var(--font-body-md-semibold);
+	text-align: left;
+}
+
+.markdownViewer-tableCell {
+	padding: 12px;
+	border-bottom: 1px solid var(--color-border-secondary);
+	border-right: 1px solid var(--color-border-secondary);
+}
+
+.markdownViewer-tableHeaderCell:last-child,
+.markdownViewer-tableCell:last-child {
+	border-right: none;
+}
+
+.markdownViewer-horizontalRule {
+	border: none;
+	height: 1px;
+	background: var(--color-border-primary);
+	margin: 2rem 0;
+}
+
+.markdownViewer-bold {
+	font-weight: 700;
+}
+
+.markdownViewer-italic {
+	font-style: italic;
+}
+
+.markdownViewer-strikethrough {
+	text-decoration: line-through;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+	.markdownViewer {
+		padding: 10px;
+	}
+
+	.markdownViewer-heading1 {
+		font: var(--font-heading-lg);
+	}
+
+	.markdownViewer-heading2 {
+		font: var(--font-heading-md);
+	}
+
+	.markdownViewer-heading3 {
+		font: var(--font-heading-sm);
+	}
+
+	.markdownViewer-table {
+		font: var(--font-body-sm);
+	}
+
+	.markdownViewer-tableHeaderCell,
+	.markdownViewer-tableCell {
+		padding: 8px;
+	}
+}
