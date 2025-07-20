@@ -87,7 +87,7 @@
 	}
 
 	&:active:not(.disabled) {
-		background-color: #15803d;
+		background-color: var(--color-success-dark);
 	}
 }
 
@@ -101,7 +101,7 @@
 	}
 
 	&:active:not(.disabled) {
-		background-color: #b91c1c;
+		background-color: var(--color-error-dark);
 	}
 }
 
@@ -115,7 +115,7 @@
 	}
 
 	&:active:not(.disabled) {
-		background-color: #c2410c;
+		background-color: var(--color-warning-orange-dark);
 	}
 }
 
