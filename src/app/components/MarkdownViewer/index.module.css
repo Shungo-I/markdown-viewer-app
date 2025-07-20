@@ -94,10 +94,6 @@
 	background: var(--color-background-secondary);
 }
 
-.markdownViewer-tableBody {
-	/* デフォルトのtbodyスタイル */
-}
-
 .markdownViewer-tableHeaderCell {
 	padding: 12px;
 	border-bottom: 1px solid var(--color-border-secondary);
@@ -134,32 +130,4 @@
 
 .markdownViewer-strikethrough {
 	text-decoration: line-through;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-	.markdownViewer {
-		padding: 10px;
-	}
-
-	.markdownViewer-heading1 {
-		font: var(--font-heading-lg);
-	}
-
-	.markdownViewer-heading2 {
-		font: var(--font-heading-md);
-	}
-
-	.markdownViewer-heading3 {
-		font: var(--font-heading-sm);
-	}
-
-	.markdownViewer-table {
-		font: var(--font-body-sm);
-	}
-
-	.markdownViewer-tableHeaderCell,
-	.markdownViewer-tableCell {
-		padding: 8px;
-	}
 }

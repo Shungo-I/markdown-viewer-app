@@ -1,0 +1,15 @@
+.searchContainer {
+	margin-bottom: 16px;
+}
+
+/* カスタムスタイル */
+.searchContainer input {
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.searchContainer input:focus {
+	border-color: var(--color-primary-600) !important;
+	box-shadow: 0 0 0 2px var(--color-focus-ring) !important;
+}

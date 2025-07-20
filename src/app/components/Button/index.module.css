@@ -173,16 +173,3 @@
 .loader {
 	transform: none !important;
 }
-
-/* ===== レスポンシブ対応 ===== */
-@media (max-width: 768px) {
-	.lg {
-		padding: 14px 20px;
-		min-height: 44px;
-	}
-
-	.md {
-		padding: 10px 16px;
-		min-height: 36px;
-	}
-}
