@@ -1,0 +1,188 @@
+/* ===== ベーススタイル ===== */
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	border: 2px solid transparent;
+	border-radius: 6px;
+	font: var(--font-button);
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	white-space: nowrap;
+
+	/* フォーカススタイル */
+	&:focus-visible {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
+		box-shadow: 0 0 0 4px var(--color-focus-ring);
+	}
+}
+
+/* ===== サイズバリエーション ===== */
+.xs {
+	padding: 6px 12px;
+	font: var(--font-caption-bold);
+	min-height: 28px;
+}
+
+.sm {
+	padding: 8px 16px;
+	font: var(--font-label);
+	min-height: 32px;
+}
+
+.md {
+	padding: 12px 20px;
+	font: var(--font-button);
+	min-height: 40px;
+}
+
+.lg {
+	padding: 16px 24px;
+	font: var(--font-body-md-semibold);
+	min-height: 48px;
+}
+
+/* ===== バリエーション ===== */
+
+/* プライマリー */
+.primary {
+	background-color: var(--color-primary-600);
+	color: var(--color-text-inverse);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-primary-700);
+	}
+
+	&:active:not(.disabled) {
+		background-color: var(--color-primary-800);
+	}
+}
+
+/* セカンダリー */
+.secondary {
+	background-color: var(--color-secondary-100);
+	color: var(--color-text-primary);
+	border-color: var(--color-border-primary);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-secondary-200);
+		border-color: var(--color-border-secondary);
+	}
+
+	&:active:not(.disabled) {
+		background-color: var(--color-secondary-300);
+	}
+}
+
+/* サクセス */
+.success {
+	background-color: var(--color-success-light);
+	color: var(--color-text-inverse);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-success-dark);
+	}
+
+	&:active:not(.disabled) {
+		background-color: #15803d;
+	}
+}
+
+/* エラー */
+.error {
+	background-color: var(--color-error-light);
+	color: var(--color-text-inverse);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-error-dark);
+	}
+
+	&:active:not(.disabled) {
+		background-color: #b91c1c;
+	}
+}
+
+/* 警告 */
+.warning {
+	background-color: var(--color-warning-orange);
+	color: var(--color-text-inverse);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-warning-orange-dark);
+	}
+
+	&:active:not(.disabled) {
+		background-color: #c2410c;
+	}
+}
+
+/* ゴースト */
+.ghost {
+	background-color: transparent;
+	color: var(--color-primary-600);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-primary-50);
+		color: var(--color-primary-700);
+	}
+
+	&:active:not(.disabled) {
+		background-color: var(--color-primary-100);
+	}
+}
+
+/* アウトライン */
+.outline {
+	background-color: transparent;
+	color: var(--color-primary-600);
+	border-color: var(--color-primary-600);
+
+	&:hover:not(.disabled) {
+		background-color: var(--color-primary-50);
+		border-color: var(--color-primary-700);
+		color: var(--color-primary-700);
+	}
+
+	&:active:not(.disabled) {
+		background-color: var(--color-primary-100);
+	}
+}
+
+/* ===== 状態 ===== */
+
+/* 無効状態 */
+.disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/* ローディング状態 */
+.loading {
+	cursor: wait !important;
+}
+
+/* 全幅 */
+.fullWidth {
+	width: 100%;
+}
+
+/* ===== ローダーカスタマイズ ===== */
+.loader {
+	transform: none !important;
+}
+
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 768px) {
+	.lg {
+		padding: 14px 20px;
+		min-height: 44px;
+	}
+
+	.md {
+		padding: 10px 16px;
+		min-height: 36px;
+	}
+}
