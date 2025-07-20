@@ -1,0 +1,28 @@
+.searchContainer {
+	margin-bottom: 16px;
+}
+
+/* カスタムスタイル */
+.searchContainer input {
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.searchContainer input:focus {
+	border-color: var(--color-primary-600) !important;
+	box-shadow: 0 0 0 2px var(--color-focus-ring) !important;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+	.searchContainer input {
+		background-color: var(--color-secondary-800) !important;
+		border-color: var(--color-secondary-600) !important;
+		color: var(--color-text-inverse);
+	}
+
+	.searchContainer input:focus {
+		border-color: var(--color-primary-500) !important;
+	}
+}
