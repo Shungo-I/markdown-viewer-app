@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
-import { SearchBar } from "./index";
+import { SearchBar, type SearchBarProps } from "./index";
 
 const meta: Meta<typeof SearchBar> = {
 	title: "Components/SearchBar",
@@ -42,7 +42,7 @@ export default meta;
 type Story = StoryObj<typeof SearchBar>;
 
 // 制御されたコンポーネントのためのラッパー
-const SearchBarWrapper = (args: any) => {
+const SearchBarWrapper = (args: SearchBarProps) => {
 	const [value, setValue] = useState(args.value || "");
 	return <SearchBar {...args} value={value} onChange={setValue} />;
 };
