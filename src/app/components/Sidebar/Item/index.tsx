@@ -5,7 +5,6 @@ import styles from "./index.module.css";
 export type SidebarItemProps = {
 	title: string;
 	icon?: ReactNode;
-	level?: number;
 	isActive?: boolean;
 	onClick?: () => void;
 };
@@ -13,13 +12,12 @@ export type SidebarItemProps = {
 export const SidebarItem = ({
 	title,
 	icon,
-	level = 0,
 	isActive = false,
 	onClick,
 }: SidebarItemProps) => {
 	return (
 		<button
-			className={clsx(styles.sidebarItem, styles[`level${level}`], {
+			className={clsx(styles.sidebarItem, {
 				[styles.active]: isActive,
 			})}
 			onClick={onClick}

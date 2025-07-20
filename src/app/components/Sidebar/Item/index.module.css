@@ -41,31 +41,3 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
-/* レベル別のインデント */
-.level0 {
-	padding-left: 8px;
-}
-
-.level1 {
-	padding-left: 24px;
-}
-
-.level2 {
-	padding-left: 40px;
-}
-
-.level3 {
-	padding-left: 56px;
-}
-
-/* ダークモード対応 */
-@media (prefers-color-scheme: dark) {
-	.sidebarItem:hover {
-		background-color: #4a5568;
-	}
-
-	.sidebarItem.active {
-		background-color: #3182ce;
-	}
-}

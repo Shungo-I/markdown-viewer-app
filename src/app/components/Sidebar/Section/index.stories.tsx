@@ -85,13 +85,13 @@ export const Nested: Story = {
 					icon={<FiFolder />}
 					defaultExpanded={true}
 				>
-					<SidebarItem title="ファイル1.md" icon={<FiFile />} level={2} />
-					<SidebarItem title="ファイル2.md" icon={<FiFile />} level={2} />
+					<SidebarItem title="ファイル1.md" icon={<FiFile />} />
+					<SidebarItem title="ファイル2.md" icon={<FiFile />} />
 				</SidebarSection>
 				<SidebarSection title="サブフォルダ2" icon={<FiFolder />}>
-					<SidebarItem title="ファイル3.md" icon={<FiFile />} level={2} />
+					<SidebarItem title="ファイル3.md" icon={<FiFile />} />
 				</SidebarSection>
-				<SidebarItem title="ルートファイル.md" icon={<FiFile />} level={1} />
+				<SidebarItem title="ルートファイル.md" icon={<FiFile />} />
 			</div>
 		),
 	},

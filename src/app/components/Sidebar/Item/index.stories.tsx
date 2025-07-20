@@ -18,10 +18,6 @@ const meta: Meta<typeof SidebarItem> = {
 			control: false,
 			description: "アイコンコンポーネント",
 		},
-		level: {
-			control: { type: "number", min: 0, max: 3 },
-			description: "ネストレベル（インデントの深さ）",
-		},
 		isActive: {
 			control: "boolean",
 			description: "アクティブ状態",
