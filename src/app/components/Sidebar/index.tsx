@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { type FC, useState } from "react";
 import { FiFile, FiFolder } from "react-icons/fi";
 import { SearchBar } from "../SearchBar";
-import styles from "./index.module.css";
 import { SidebarItem } from "./Item";
+import styles from "./index.module.css";
 import { SidebarSection } from "./Section";
 
 export type SidebarProps = {
