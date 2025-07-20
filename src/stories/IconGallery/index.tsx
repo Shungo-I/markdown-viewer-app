@@ -314,10 +314,30 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 
 			// Check if clipboard API is available
 			if (!navigator.clipboard) {
-				throw new Error("クリップボードAPIが利用できません");
+				// Fallback for older browsers - create a temporary textarea
+				const textArea = document.createElement("textarea");
+				textArea.value = importName;
+				textArea.style.position = "fixed";
+				textArea.style.opacity = "0";
+				document.body.appendChild(textArea);
+				textArea.focus();
+				textArea.select();
+				
+				try {
+					const successful = document.execCommand('copy');
+					document.body.removeChild(textArea);
+					
+					if (!successful) {
+						throw new Error("フォールバックコピーが失敗しました");
+					}
+				} catch (_fallbackError) {
+					document.body.removeChild(textArea);
+					throw new Error("クリップボードAPIが利用できません");
+				}
+			} else {
+				await navigator.clipboard.writeText(importName);
 			}
 
-			await navigator.clipboard.writeText(importName);
 			setCopyStatus(`${importName} をコピーしました！`);
 
 			// Clear success message after 3 seconds
@@ -330,8 +350,8 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 				clearTimeout(timeoutRef.current);
 			}
 
-			setCopyStatus("コピーに失敗しました");
-			console.error("Clipboard copy failed:", error);
+			const errorMessage = error instanceof Error ? error.message : "コピーに失敗しました";
+			setCopyStatus(errorMessage);
 
 			// Clear error message after 3 seconds
 			timeoutRef.current = setTimeout(() => {
@@ -376,7 +396,7 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 					}) => (
 						<button
 							type="button"
-							key={`${iconCategory}-${importName}`}
+							key={`${iconCategory}-${importName}-${name}`}
 							className={styles.iconItem}
 							onClick={() => handleCopyToClipboard(importName)}
 							title={`${importName} をクリップボードにコピー`}

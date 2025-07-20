@@ -26,7 +26,7 @@ export const SearchBar: FC<SearchBarProps> = ({
 			<TextInput
 				placeholder={placeholder}
 				value={value}
-				onChange={(event) => onChange(event.currentTarget.value)}
+				onChange={(event) => onChange(event.currentTarget.value ?? "")}
 				leftSection={icon}
 				disabled={disabled}
 				styles={{

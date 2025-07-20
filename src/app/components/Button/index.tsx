@@ -4,6 +4,7 @@ import {
 } from "@mantine/core";
 import clsx from "clsx";
 import type { FC } from "react";
+import { useMemo } from "react";
 import styles from "./index.module.css";
 
 export type ButtonVariant =
@@ -44,34 +45,42 @@ export const Button: FC<ButtonProps> = ({
 	disabled,
 	...props
 }) => {
-	// ボタンサイズに応じたローダーサイズを設定
-	const getLoaderSize = (buttonSize: ButtonSize): number => {
-		switch (buttonSize) {
-			case "xs":
-				return 12;
-			case "sm":
-				return 14;
-			case "md":
-				return 16;
-			case "lg":
-				return 18;
-			default:
-				return 16;
-		}
-	};
+	// ローダープロパティをメモ化してパフォーマンスを向上
+	const loaderProps = useMemo(() => {
+		// ボタンサイズに応じたローダーサイズを設定
+		const getLoaderSize = (buttonSize: ButtonSize): number => {
+			switch (buttonSize) {
+				case "xs":
+					return 12;
+				case "sm":
+					return 14;
+				case "md":
+					return 16;
+				case "lg":
+					return 18;
+				default:
+					return 16;
+			}
+		};
 
-	// バリエーションに応じたローダー色を取得
-	const getLoaderColor = (buttonVariant: ButtonVariant): string => {
-		switch (buttonVariant) {
-			case "ghost":
-			case "outline":
-				return "var(--color-primary-600)";
-			case "secondary":
-				return "var(--color-text-primary)";
-			default:
-				return "currentColor";
-		}
-	};
+		// バリエーションに応じたローダー色を取得
+		const getLoaderColor = (buttonVariant: ButtonVariant): string => {
+			switch (buttonVariant) {
+				case "ghost":
+				case "outline":
+					return "var(--color-primary-600)";
+				case "secondary":
+					return "var(--color-text-primary)";
+				default:
+					return "currentColor";
+			}
+		};
+
+		return {
+			size: getLoaderSize(size),
+			color: getLoaderColor(variant),
+		};
+	}, [size, variant]);
 
 	// 内部スタイルと外部から渡されたclassNamesをマージ
 	const mergedClassNames = {
@@ -98,10 +107,7 @@ export const Button: FC<ButtonProps> = ({
 			classNames={mergedClassNames}
 			disabled={disabled || loading}
 			loading={loading}
-			loaderProps={{
-				size: getLoaderSize(size),
-				color: getLoaderColor(variant),
-			}}
+			loaderProps={loaderProps}
 			justify="center"
 			unstyled
 		>
