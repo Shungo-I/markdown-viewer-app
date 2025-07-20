@@ -28,6 +28,8 @@ export const SidebarSection: FC<SidebarSectionProps> = ({
 				className={styles.sectionHeader}
 				onClick={toggleExpanded}
 				type="button"
+				aria-expanded={isExpanded}
+				aria-label={`${title}セクションを${isExpanded ? '閉じる' : '開く'}`}
 			>
 				<span className={styles.chevron}>
 					{isExpanded ? (

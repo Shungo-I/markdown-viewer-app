@@ -22,6 +22,8 @@ export const SidebarItem: FC<SidebarItemProps> = ({
 			})}
 			onClick={onClick}
 			type="button"
+			aria-label={`${title}を選択`}
+			aria-current={isActive ? "page" : undefined}
 		>
 			{icon && <span className={styles.icon}>{icon}</span>}
 			<span className={styles.title}>{title}</span>
