@@ -325,11 +325,12 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 				
 				try {
 					const successful = document.execCommand('copy');
-					document.body.removeChild(textArea);
 					
 					if (!successful) {
 						throw new Error("フォールバックコピーが失敗しました");
 					}
+					
+					document.body.removeChild(textArea);
 				} catch (_fallbackError) {
 					document.body.removeChild(textArea);
 					throw new Error("クリップボードAPIが利用できません");
