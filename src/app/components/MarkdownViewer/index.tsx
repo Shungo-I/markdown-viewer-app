@@ -73,11 +73,7 @@ export const MarkdownViewer: FC<MarkdownViewerProps> = ({
 							{children}
 						</thead>
 					),
-					tbody: ({ children }) => (
-						<tbody className={styles["markdownViewer-tableBody"]}>
-							{children}
-						</tbody>
-					),
+					tbody: ({ children }) => <tbody>{children}</tbody>,
 					th: ({ children }) => (
 						<th className={styles["markdownViewer-tableHeaderCell"]}>
 							{children}
