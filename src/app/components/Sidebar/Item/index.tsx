@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import styles from "./index.module.css";
 
 export type SidebarItemProps = {
@@ -9,12 +9,12 @@ export type SidebarItemProps = {
 	onClick?: () => void;
 };
 
-export const SidebarItem = ({
+export const SidebarItem: FC<SidebarItemProps> = ({
 	title,
 	icon,
 	isActive = false,
 	onClick,
-}: SidebarItemProps) => {
+}) => {
 	return (
 		<button
 			className={clsx(styles.sidebarItem, {

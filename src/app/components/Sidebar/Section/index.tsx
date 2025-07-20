@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import styles from "./index.module.css";
@@ -10,12 +10,12 @@ export type SidebarSectionProps = {
 	children?: ReactNode;
 };
 
-export const SidebarSection = ({
+export const SidebarSection: FC<SidebarSectionProps> = ({
 	title,
 	icon,
 	defaultExpanded = false,
 	children,
-}: SidebarSectionProps) => {
+}) => {
 	const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
 	const toggleExpanded = () => {
