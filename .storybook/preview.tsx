@@ -1,6 +1,8 @@
 import { MantineProvider } from "@mantine/core";
-import type { Preview } from "@storybook/nextjs-vite";
 import "@mantine/core/styles.css";
+import type { Preview } from "@storybook/nextjs-vite";
+// biome-ignore lint/correctness/noUnusedImports: React is needed for JSX in Storybook
+import React from "react";
 import "../src/app/globals.css";
 
 const preview: Preview = {

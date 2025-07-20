@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/blocks';
+import { IconGallery } from './IconGallery';
+
+<Meta title="アイコンギャラリー" />
+
+# アイコンギャラリー
+
+react-iconsライブラリのアイコンを効率的に閲覧・検索できるギャラリーコンポーネントです。
+
+## アイコンギャラリー
+
+すべてのアイコンライブラリから利用可能なアイコンを表示します。検索機能でアイコンを素早く見つけることができ、アイコンをクリックするとコンポーネント名がクリップボードにコピーされます。
+
+<div style={{ marginBottom: '32px' }}>
+  <IconGallery />
+</div>
+
+## 使用方法
+
+### アイコンの選択と使用
+
+1. 上記のギャラリーから使用したいアイコンを探します
+2. 検索ボックスでアイコン名を絞り込むことができます
+3. アイコンをクリックすると、コンポーネント名がクリップボードにコピーされます
+4. コピーされた名前を使用してアイコンを使用します
+
+### コード例
+
+```tsx
+import { FaHome, FaUser, FaStar } from 'react-icons/fa';
+import { MdHome, MdPerson, MdStar } from 'react-icons/md';
+import { AiOutlineHome, AiOutlineUser, AiOutlineStar } from 'react-icons/ai';
+
+// 基本的な使用方法
+<FaHome />
+<MdHome />
+<AiOutlineHome />
+
+// サイズと色を指定
+<FaHome size={24} color="#007bff" />
+<MdHome size={32} color="#28a745" />
+<AiOutlineHome size={20} color="#dc3545" />
+```
