@@ -322,14 +322,14 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 				document.body.appendChild(textArea);
 				textArea.focus();
 				textArea.select();
-				
+
 				try {
-					const successful = document.execCommand('copy');
-					
+					const successful = document.execCommand("copy");
+
 					if (!successful) {
 						throw new Error("フォールバックコピーが失敗しました");
 					}
-					
+
 					document.body.removeChild(textArea);
 				} catch (_fallbackError) {
 					document.body.removeChild(textArea);
@@ -351,7 +351,8 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 				clearTimeout(timeoutRef.current);
 			}
 
-			const errorMessage = error instanceof Error ? error.message : "コピーに失敗しました";
+			const errorMessage =
+				error instanceof Error ? error.message : "コピーに失敗しました";
 			setCopyStatus(errorMessage);
 
 			// Clear error message after 3 seconds
