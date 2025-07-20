@@ -128,119 +128,147 @@ interface IconGalleryProps {
 
 const iconSets = {
 	fontawesome: [
-		{ icon: FaHome, name: "Home" },
-		{ icon: FaUser, name: "User" },
-		{ icon: FaHeart, name: "Heart" },
-		{ icon: FaStar, name: "Star" },
-		{ icon: FaSearch, name: "Search" },
-		{ icon: FaCog, name: "Settings" },
-		{ icon: FaEnvelope, name: "Email" },
-		{ icon: FaPhone, name: "Phone" },
-		{ icon: FaCamera, name: "Camera" },
-		{ icon: FaMusic, name: "Music" },
-		{ icon: FaVideo, name: "Video" },
-		{ icon: FaFile, name: "File" },
-		{ icon: FaFolder, name: "Folder" },
-		{ icon: FaDownload, name: "Download" },
-		{ icon: FaUpload, name: "Upload" },
-		{ icon: FaTrash, name: "Trash" },
-		{ icon: FaEdit, name: "Edit" },
-		{ icon: FaPlus, name: "Plus" },
-		{ icon: FaMinus, name: "Minus" },
-		{ icon: FaCheck, name: "Check" },
-		{ icon: FaTimes, name: "Times" },
-		{ icon: FaArrowRight, name: "Arrow Right" },
-		{ icon: FaArrowLeft, name: "Arrow Left" },
-		{ icon: FaArrowUp, name: "Arrow Up" },
-		{ icon: FaArrowDown, name: "Arrow Down" },
-		{ icon: FaShoppingCart, name: "Shopping Cart" },
-		{ icon: FaGift, name: "Gift" },
-		{ icon: FaCalendar, name: "Calendar" },
-		{ icon: FaClock, name: "Clock" },
-		{ icon: FaMap, name: "Map" },
-		{ icon: FaGamepad, name: "Gamepad" },
-		{ icon: FaBell, name: "Bell" },
-		{ icon: FaFlag, name: "Flag" },
-		{ icon: FaThumbsUp, name: "Thumbs Up" },
-		{ icon: FaThumbsDown, name: "Thumbs Down" },
-		{ icon: FaComments, name: "Comments" },
-		{ icon: FaShare, name: "Share" },
-		{ icon: FaBuilding, name: "Building" },
-		{ icon: FaCar, name: "Car" },
-		{ icon: FaPlane, name: "Plane" },
-		{ icon: FaTrain, name: "Train" },
-		{ icon: FaShip, name: "Ship" },
-		{ icon: FaBicycle, name: "Bicycle" },
-		{ icon: FaLaptop, name: "Laptop" },
-		{ icon: FaMobile, name: "Mobile" },
-		{ icon: FaDesktop, name: "Desktop" },
-		{ icon: FaHeadphones, name: "Headphones" },
-		{ icon: FaMicrophone, name: "Microphone" },
-		{ icon: FaWifi, name: "Wifi" },
-		{ icon: FaFacebook, name: "Facebook" },
-		{ icon: FaTwitter, name: "Twitter" },
-		{ icon: FaInstagram, name: "Instagram" },
-		{ icon: FaLinkedin, name: "LinkedIn" },
-		{ icon: FaGithub, name: "GitHub" },
-		{ icon: FaYoutube, name: "YouTube" },
+		{ icon: FaHome, name: "Home", importName: "FaHome" },
+		{ icon: FaUser, name: "User", importName: "FaUser" },
+		{ icon: FaHeart, name: "Heart", importName: "FaHeart" },
+		{ icon: FaStar, name: "Star", importName: "FaStar" },
+		{ icon: FaSearch, name: "Search", importName: "FaSearch" },
+		{ icon: FaCog, name: "Settings", importName: "FaCog" },
+		{ icon: FaEnvelope, name: "Email", importName: "FaEnvelope" },
+		{ icon: FaPhone, name: "Phone", importName: "FaPhone" },
+		{ icon: FaCamera, name: "Camera", importName: "FaCamera" },
+		{ icon: FaMusic, name: "Music", importName: "FaMusic" },
+		{ icon: FaVideo, name: "Video", importName: "FaVideo" },
+		{ icon: FaFile, name: "File", importName: "FaFile" },
+		{ icon: FaFolder, name: "Folder", importName: "FaFolder" },
+		{ icon: FaDownload, name: "Download", importName: "FaDownload" },
+		{ icon: FaUpload, name: "Upload", importName: "FaUpload" },
+		{ icon: FaTrash, name: "Trash", importName: "FaTrash" },
+		{ icon: FaEdit, name: "Edit", importName: "FaEdit" },
+		{ icon: FaPlus, name: "Plus", importName: "FaPlus" },
+		{ icon: FaMinus, name: "Minus", importName: "FaMinus" },
+		{ icon: FaCheck, name: "Check", importName: "FaCheck" },
+		{ icon: FaTimes, name: "Times", importName: "FaTimes" },
+		{ icon: FaArrowRight, name: "Arrow Right", importName: "FaArrowRight" },
+		{ icon: FaArrowLeft, name: "Arrow Left", importName: "FaArrowLeft" },
+		{ icon: FaArrowUp, name: "Arrow Up", importName: "FaArrowUp" },
+		{ icon: FaArrowDown, name: "Arrow Down", importName: "FaArrowDown" },
+		{
+			icon: FaShoppingCart,
+			name: "Shopping Cart",
+			importName: "FaShoppingCart",
+		},
+		{ icon: FaGift, name: "Gift", importName: "FaGift" },
+		{ icon: FaCalendar, name: "Calendar", importName: "FaCalendar" },
+		{ icon: FaClock, name: "Clock", importName: "FaClock" },
+		{ icon: FaMap, name: "Map", importName: "FaMap" },
+		{ icon: FaGamepad, name: "Gamepad", importName: "FaGamepad" },
+		{ icon: FaBell, name: "Bell", importName: "FaBell" },
+		{ icon: FaFlag, name: "Flag", importName: "FaFlag" },
+		{ icon: FaThumbsUp, name: "Thumbs Up", importName: "FaThumbsUp" },
+		{ icon: FaThumbsDown, name: "Thumbs Down", importName: "FaThumbsDown" },
+		{ icon: FaComments, name: "Comments", importName: "FaComments" },
+		{ icon: FaShare, name: "Share", importName: "FaShare" },
+		{ icon: FaBuilding, name: "Building", importName: "FaBuilding" },
+		{ icon: FaCar, name: "Car", importName: "FaCar" },
+		{ icon: FaPlane, name: "Plane", importName: "FaPlane" },
+		{ icon: FaTrain, name: "Train", importName: "FaTrain" },
+		{ icon: FaShip, name: "Ship", importName: "FaShip" },
+		{ icon: FaBicycle, name: "Bicycle", importName: "FaBicycle" },
+		{ icon: FaLaptop, name: "Laptop", importName: "FaLaptop" },
+		{ icon: FaMobile, name: "Mobile", importName: "FaMobile" },
+		{ icon: FaDesktop, name: "Desktop", importName: "FaDesktop" },
+		{ icon: FaHeadphones, name: "Headphones", importName: "FaHeadphones" },
+		{ icon: FaMicrophone, name: "Microphone", importName: "FaMicrophone" },
+		{ icon: FaWifi, name: "Wifi", importName: "FaWifi" },
+		{ icon: FaFacebook, name: "Facebook", importName: "FaFacebook" },
+		{ icon: FaTwitter, name: "Twitter", importName: "FaTwitter" },
+		{ icon: FaInstagram, name: "Instagram", importName: "FaInstagram" },
+		{ icon: FaLinkedin, name: "LinkedIn", importName: "FaLinkedin" },
+		{ icon: FaGithub, name: "GitHub", importName: "FaGithub" },
+		{ icon: FaYoutube, name: "YouTube", importName: "FaYoutube" },
 	],
 	material: [
-		{ icon: MdHome, name: "Home" },
-		{ icon: MdPerson, name: "Person" },
-		{ icon: MdFavorite, name: "Favorite" },
-		{ icon: MdStar, name: "Star" },
-		{ icon: MdSearch, name: "Search" },
-		{ icon: MdSettings, name: "Settings" },
-		{ icon: MdEmail, name: "Email" },
-		{ icon: MdPhone, name: "Phone" },
-		{ icon: MdCamera, name: "Camera" },
-		{ icon: MdMusicNote, name: "Music" },
-		{ icon: MdVideocam, name: "Video" },
-		{ icon: MdDescription, name: "Document" },
-		{ icon: MdFolder, name: "Folder" },
-		{ icon: MdFileDownload, name: "Download" },
-		{ icon: MdFileUpload, name: "Upload" },
-		{ icon: MdDelete, name: "Delete" },
-		{ icon: MdEdit, name: "Edit" },
-		{ icon: MdAdd, name: "Add" },
-		{ icon: MdRemove, name: "Remove" },
-		{ icon: MdCheck, name: "Check" },
-		{ icon: MdClose, name: "Close" },
-		{ icon: MdArrowForward, name: "Arrow Forward" },
-		{ icon: MdArrowBack, name: "Arrow Back" },
-		{ icon: MdArrowUpward, name: "Arrow Up" },
-		{ icon: MdArrowDownward, name: "Arrow Down" },
-		{ icon: MdShoppingCart, name: "Shopping Cart" },
-		{ icon: MdCalendarToday, name: "Calendar" },
-		{ icon: MdAccessTime, name: "Time" },
-		{ icon: MdLocationOn, name: "Location" },
-		{ icon: MdNotifications, name: "Notifications" },
-		{ icon: MdFlag, name: "Flag" },
-		{ icon: MdThumbUp, name: "Thumb Up" },
-		{ icon: MdThumbDown, name: "Thumb Down" },
-		{ icon: MdComment, name: "Comment" },
-		{ icon: MdShare, name: "Share" },
+		{ icon: MdHome, name: "Home", importName: "MdHome" },
+		{ icon: MdPerson, name: "Person", importName: "MdPerson" },
+		{ icon: MdFavorite, name: "Favorite", importName: "MdFavorite" },
+		{ icon: MdStar, name: "Star", importName: "MdStar" },
+		{ icon: MdSearch, name: "Search", importName: "MdSearch" },
+		{ icon: MdSettings, name: "Settings", importName: "MdSettings" },
+		{ icon: MdEmail, name: "Email", importName: "MdEmail" },
+		{ icon: MdPhone, name: "Phone", importName: "MdPhone" },
+		{ icon: MdCamera, name: "Camera", importName: "MdCamera" },
+		{ icon: MdMusicNote, name: "Music", importName: "MdMusicNote" },
+		{ icon: MdVideocam, name: "Video", importName: "MdVideocam" },
+		{ icon: MdDescription, name: "Document", importName: "MdDescription" },
+		{ icon: MdFolder, name: "Folder", importName: "MdFolder" },
+		{ icon: MdFileDownload, name: "Download", importName: "MdFileDownload" },
+		{ icon: MdFileUpload, name: "Upload", importName: "MdFileUpload" },
+		{ icon: MdDelete, name: "Delete", importName: "MdDelete" },
+		{ icon: MdEdit, name: "Edit", importName: "MdEdit" },
+		{ icon: MdAdd, name: "Add", importName: "MdAdd" },
+		{ icon: MdRemove, name: "Remove", importName: "MdRemove" },
+		{ icon: MdCheck, name: "Check", importName: "MdCheck" },
+		{ icon: MdClose, name: "Close", importName: "MdClose" },
+		{
+			icon: MdArrowForward,
+			name: "Arrow Forward",
+			importName: "MdArrowForward",
+		},
+		{ icon: MdArrowBack, name: "Arrow Back", importName: "MdArrowBack" },
+		{ icon: MdArrowUpward, name: "Arrow Up", importName: "MdArrowUpward" },
+		{
+			icon: MdArrowDownward,
+			name: "Arrow Down",
+			importName: "MdArrowDownward",
+		},
+		{
+			icon: MdShoppingCart,
+			name: "Shopping Cart",
+			importName: "MdShoppingCart",
+		},
+		{ icon: MdCalendarToday, name: "Calendar", importName: "MdCalendarToday" },
+		{ icon: MdAccessTime, name: "Time", importName: "MdAccessTime" },
+		{ icon: MdLocationOn, name: "Location", importName: "MdLocationOn" },
+		{
+			icon: MdNotifications,
+			name: "Notifications",
+			importName: "MdNotifications",
+		},
+		{ icon: MdFlag, name: "Flag", importName: "MdFlag" },
+		{ icon: MdThumbUp, name: "Thumb Up", importName: "MdThumbUp" },
+		{ icon: MdThumbDown, name: "Thumb Down", importName: "MdThumbDown" },
+		{ icon: MdComment, name: "Comment", importName: "MdComment" },
+		{ icon: MdShare, name: "Share", importName: "MdShare" },
 	],
 	antdesign: [
-		{ icon: AiOutlineHome, name: "Home" },
-		{ icon: AiOutlineUser, name: "User" },
-		{ icon: AiOutlineHeart, name: "Heart" },
-		{ icon: AiOutlineStar, name: "Star" },
-		{ icon: AiOutlineSearch, name: "Search" },
-		{ icon: AiOutlineSetting, name: "Setting" },
-		{ icon: AiOutlineMail, name: "Mail" },
-		{ icon: AiOutlinePhone, name: "Phone" },
-		{ icon: AiOutlineCamera, name: "Camera" },
-		{ icon: AiOutlineFileText, name: "File Text" },
-		{ icon: AiOutlineFolder, name: "Folder" },
-		{ icon: AiOutlineDownload, name: "Download" },
-		{ icon: AiOutlineUpload, name: "Upload" },
-		{ icon: AiOutlineDelete, name: "Delete" },
-		{ icon: AiOutlineEdit, name: "Edit" },
-		{ icon: AiOutlinePlus, name: "Plus" },
-		{ icon: AiOutlineMinus, name: "Minus" },
-		{ icon: AiOutlineCheck, name: "Check" },
-		{ icon: AiOutlineClose, name: "Close" },
+		{ icon: AiOutlineHome, name: "Home", importName: "AiOutlineHome" },
+		{ icon: AiOutlineUser, name: "User", importName: "AiOutlineUser" },
+		{ icon: AiOutlineHeart, name: "Heart", importName: "AiOutlineHeart" },
+		{ icon: AiOutlineStar, name: "Star", importName: "AiOutlineStar" },
+		{ icon: AiOutlineSearch, name: "Search", importName: "AiOutlineSearch" },
+		{ icon: AiOutlineSetting, name: "Setting", importName: "AiOutlineSetting" },
+		{ icon: AiOutlineMail, name: "Mail", importName: "AiOutlineMail" },
+		{ icon: AiOutlinePhone, name: "Phone", importName: "AiOutlinePhone" },
+		{ icon: AiOutlineCamera, name: "Camera", importName: "AiOutlineCamera" },
+		{
+			icon: AiOutlineFileText,
+			name: "File Text",
+			importName: "AiOutlineFileText",
+		},
+		{ icon: AiOutlineFolder, name: "Folder", importName: "AiOutlineFolder" },
+		{
+			icon: AiOutlineDownload,
+			name: "Download",
+			importName: "AiOutlineDownload",
+		},
+		{ icon: AiOutlineUpload, name: "Upload", importName: "AiOutlineUpload" },
+		{ icon: AiOutlineDelete, name: "Delete", importName: "AiOutlineDelete" },
+		{ icon: AiOutlineEdit, name: "Edit", importName: "AiOutlineEdit" },
+		{ icon: AiOutlinePlus, name: "Plus", importName: "AiOutlinePlus" },
+		{ icon: AiOutlineMinus, name: "Minus", importName: "AiOutlineMinus" },
+		{ icon: AiOutlineCheck, name: "Check", importName: "AiOutlineCheck" },
+		{ icon: AiOutlineClose, name: "Close", importName: "AiOutlineClose" },
 	],
 };
 
@@ -251,6 +279,7 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 	category = "all",
 }) => {
 	const [searchTerm, setSearchTerm] = useState("");
+	const [copyStatus, setCopyStatus] = useState<string>("");
 
 	const getIconsToDisplay = () => {
 		if (category === "all") {
@@ -264,6 +293,31 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 	const filteredIcons = getIconsToDisplay().filter(({ name }) =>
 		name.toLowerCase().includes(searchTerm.toLowerCase()),
 	);
+
+	const handleCopyToClipboard = async (importName: string) => {
+		try {
+			// Check if clipboard API is available
+			if (!navigator.clipboard) {
+				throw new Error("クリップボードAPIが利用できません");
+			}
+
+			await navigator.clipboard.writeText(importName);
+			setCopyStatus(`${importName} をコピーしました！`);
+
+			// Clear success message after 3 seconds
+			setTimeout(() => {
+				setCopyStatus("");
+			}, 3000);
+		} catch (error) {
+			setCopyStatus("コピーに失敗しました");
+			console.error("Clipboard copy failed:", error);
+
+			// Clear error message after 3 seconds
+			setTimeout(() => {
+				setCopyStatus("");
+			}, 3000);
+		}
+	};
 
 	const containerStyle: React.CSSProperties = {
 		padding: "20px",
@@ -282,6 +336,17 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 		border: "1px solid #ddd",
 		borderRadius: "4px",
 		marginBottom: "10px",
+	};
+
+	const copyStatusStyle: React.CSSProperties = {
+		padding: "10px",
+		backgroundColor: copyStatus.includes("失敗") ? "#f8d7da" : "#d4edda",
+		color: copyStatus.includes("失敗") ? "#721c24" : "#155724",
+		border: `1px solid ${copyStatus.includes("失敗") ? "#f5c6cb" : "#c3e6cb"}`,
+		borderRadius: "4px",
+		marginBottom: "10px",
+		fontSize: "14px",
+		fontWeight: "500",
 	};
 
 	const gridStyle: React.CSSProperties = {
@@ -337,6 +402,7 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 					onChange={(e) => setSearchTerm(e.target.value)}
 					style={searchInputStyle}
 				/>
+				{copyStatus && <div style={copyStatusStyle}>{copyStatus}</div>}
 				<p style={{ color: "#666", fontSize: "14px" }}>
 					{filteredIcons.length}個のアイコンが見つかりました
 				</p>
@@ -344,10 +410,15 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 
 			<div style={gridStyle}>
 				{filteredIcons.map(
-					({ icon: IconComponent, name, category: iconCategory }) => (
+					({
+						icon: IconComponent,
+						name,
+						importName,
+						category: iconCategory,
+					}) => (
 						<button
 							type="button"
-							key={`${iconCategory}-${name}`}
+							key={`${iconCategory}-${importName}`}
 							style={{
 								...iconItemStyle,
 								border: "1px solid #eee",
@@ -364,11 +435,8 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 								e.currentTarget.style.transform = "translateY(0)";
 								e.currentTarget.style.boxShadow = "none";
 							}}
-							onClick={() => {
-								// アイコン名をクリップボードにコピー
-								navigator.clipboard.writeText(IconComponent.name || name);
-							}}
-							title={`${name}をクリップボードにコピー`}
+							onClick={() => handleCopyToClipboard(importName)}
+							title={`${importName} をクリップボードにコピー`}
 						>
 							<div style={iconContainerStyle}>
 								<IconComponent size={size} color={color} />
