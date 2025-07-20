@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	AiOutlineCamera,
 	AiOutlineCheck,
@@ -280,6 +280,16 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 }) => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [copyStatus, setCopyStatus] = useState<string>("");
+	const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+	// Cleanup timeout on unmount
+	useEffect(() => {
+		return () => {
+			if (timeoutRef.current) {
+				clearTimeout(timeoutRef.current);
+			}
+		};
+	}, []);
 
 	const getIconsToDisplay = () => {
 		if (category === "all") {
@@ -296,6 +306,11 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 
 	const handleCopyToClipboard = async (importName: string) => {
 		try {
+			// Clear any existing timeout
+			if (timeoutRef.current) {
+				clearTimeout(timeoutRef.current);
+			}
+
 			// Check if clipboard API is available
 			if (!navigator.clipboard) {
 				throw new Error("クリップボードAPIが利用できません");
@@ -305,15 +320,20 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 			setCopyStatus(`${importName} をコピーしました！`);
 
 			// Clear success message after 3 seconds
-			setTimeout(() => {
+			timeoutRef.current = setTimeout(() => {
 				setCopyStatus("");
 			}, 3000);
 		} catch (error) {
+			// Clear any existing timeout
+			if (timeoutRef.current) {
+				clearTimeout(timeoutRef.current);
+			}
+
 			setCopyStatus("コピーに失敗しました");
 			console.error("Clipboard copy failed:", error);
 
 			// Clear error message after 3 seconds
-			setTimeout(() => {
+			timeoutRef.current = setTimeout(() => {
 				setCopyStatus("");
 			}, 3000);
 		}
