@@ -118,6 +118,7 @@ import {
 	MdThumbUp,
 	MdVideocam,
 } from "react-icons/md";
+import styles from "./index.module.css";
 
 interface IconGalleryProps {
 	size?: number;
@@ -339,96 +340,33 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 		}
 	};
 
-	const containerStyle: React.CSSProperties = {
-		padding: "20px",
-		fontFamily: "Arial, sans-serif",
-	};
-
-	const searchContainerStyle: React.CSSProperties = {
-		marginBottom: "20px",
-	};
-
-	const searchInputStyle: React.CSSProperties = {
-		width: "100%",
-		maxWidth: "400px",
-		padding: "10px",
-		fontSize: "16px",
-		border: "1px solid #ddd",
-		borderRadius: "4px",
-		marginBottom: "10px",
-	};
-
-	const copyStatusStyle: React.CSSProperties = {
-		padding: "10px",
-		backgroundColor: copyStatus.includes("失敗") ? "#f8d7da" : "#d4edda",
-		color: copyStatus.includes("失敗") ? "#721c24" : "#155724",
-		border: `1px solid ${copyStatus.includes("失敗") ? "#f5c6cb" : "#c3e6cb"}`,
-		borderRadius: "4px",
-		marginBottom: "10px",
-		fontSize: "14px",
-		fontWeight: "500",
-	};
-
-	const gridStyle: React.CSSProperties = {
-		display: "grid",
-		gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
-		gap: "20px",
-	};
-
-	const iconItemStyle: React.CSSProperties = {
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		padding: "15px",
-		border: "1px solid #eee",
-		borderRadius: "8px",
-		backgroundColor: "#f9f9f9",
-		transition: "all 0.2s ease",
-		cursor: "pointer",
-		background: "none",
-		color: "inherit",
-		font: "inherit",
-	};
-
-	const iconContainerStyle: React.CSSProperties = {
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		width: size + 20,
-		height: size + 20,
-		marginBottom: showLabels ? "8px" : "0",
-	};
-
-	const labelStyle: React.CSSProperties = {
-		fontSize: "12px",
-		textAlign: "center" as const,
-		color: "#666",
-		marginTop: "4px",
-	};
-
-	const categoryStyle: React.CSSProperties = {
-		fontSize: "10px",
-		color: "#999",
-		fontStyle: "italic",
-	};
-
 	return (
-		<div style={containerStyle}>
-			<div style={searchContainerStyle}>
+		<div className={styles.container}>
+			<div className={styles.searchContainer}>
 				<input
 					type="text"
 					placeholder="アイコンを検索..."
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
-					style={searchInputStyle}
+					className={styles.searchInput}
 				/>
-				{copyStatus && <div style={copyStatusStyle}>{copyStatus}</div>}
-				<p style={{ color: "#666", fontSize: "14px" }}>
+				{copyStatus && (
+					<div
+						className={`${styles.copyStatus} ${
+							copyStatus.includes("失敗")
+								? styles.copyStatusError
+								: styles.copyStatusSuccess
+						}`}
+					>
+						{copyStatus}
+					</div>
+				)}
+				<p className={styles.searchInfo}>
 					{filteredIcons.length}個のアイコンが見つかりました
 				</p>
 			</div>
 
-			<div style={gridStyle}>
+			<div className={styles.grid}>
 				{filteredIcons.map(
 					({
 						icon: IconComponent,
@@ -439,33 +377,25 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 						<button
 							type="button"
 							key={`${iconCategory}-${importName}`}
-							style={{
-								...iconItemStyle,
-								border: "1px solid #eee",
-								cursor: "pointer",
-								background: "#f9f9f9",
-							}}
-							onMouseEnter={(e) => {
-								e.currentTarget.style.backgroundColor = "#f0f0f0";
-								e.currentTarget.style.transform = "translateY(-2px)";
-								e.currentTarget.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
-							}}
-							onMouseLeave={(e) => {
-								e.currentTarget.style.backgroundColor = "#f9f9f9";
-								e.currentTarget.style.transform = "translateY(0)";
-								e.currentTarget.style.boxShadow = "none";
-							}}
+							className={styles.iconItem}
 							onClick={() => handleCopyToClipboard(importName)}
 							title={`${importName} をクリップボードにコピー`}
 						>
-							<div style={iconContainerStyle}>
+							<div
+								className={styles.iconContainer}
+								style={{
+									width: size + 20,
+									height: size + 20,
+									marginBottom: showLabels ? "8px" : "0",
+								}}
+							>
 								<IconComponent size={size} color={color} />
 							</div>
 							{showLabels && (
 								<>
-									<div style={labelStyle}>{name}</div>
+									<div className={styles.label}>{name}</div>
 									{category === "all" && (
-										<div style={categoryStyle}>{iconCategory}</div>
+										<div className={styles.category}>{iconCategory}</div>
 									)}
 								</>
 							)}
@@ -475,7 +405,7 @@ export const IconGallery: React.FC<IconGalleryProps> = ({
 			</div>
 
 			{filteredIcons.length === 0 && (
-				<div style={{ textAlign: "center", color: "#999", marginTop: "40px" }}>
+				<div className={styles.noResults}>
 					検索条件に一致するアイコンが見つかりませんでした
 				</div>
 			)}
